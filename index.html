@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Fenix Fitness — оранжево-чёрный фитнес-клуб Снежинск</title><meta name="description" content="Fenix Fitness Club в Снежинске: тренажёрный зал, групповые программы, персональные тренировки, душ, персонал. Ул. Сиреневая 5 и ул. Ленина 12."/><meta name="theme-color" content="#000000"/><link rel="icon" type="image/jpeg" href="assets/photos/avatar.jpg"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;800&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/><style>
+:root{--bg:#020202;--surface:#0c0c0c;--surface-2:#121212;--line:#1d1d1d;--line2:#2d2d2d;--text:#fff;--sub:#c8c8d0;--muted:#7d7d87;--orange:#ff6a00;--orange2:#ff9a4a;--ease:cubic-bezier(.2,.7,.3,1);--slow:cubic-bezier(.16,1,.3,1);--container:min(100%,1720px);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{background:radial-gradient(1000px 600px at 85% -10%,rgba(255,106,0,.18),transparent 60%),#020202;color:#fff;font:400 16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}img{display:block;max-width:100%;}button,input,textarea,select{font:inherit;color:inherit;}button{cursor:pointer;background:none;border:0;}*:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px;}
+.shell{width:var(--container);margin-inline:auto;padding-inline:clamp(18px,4vw,48px);}
+header{position:sticky;top:0;z-index:20;background:rgba(2,2,2,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+nav{display:flex;align-items:center;gap:22px;padding:18px 0;flex-wrap:wrap;}
+.brand{display:flex;align-items:center;gap:12px;font:700 11px/1 Inter,sans-serif;text-transform:uppercase;letter-spacing:.1em;}
+.brand-mark{width:44px;height:44px;border-radius:12px;overflow:hidden;background:#080808;border:1px solid #333;position:relative;}
+.brand-mark img{width:100%;height:100%;object-fit:cover;}
+.nav-links{display:flex;gap:22px;flex-wrap:wrap;margin-left:auto;font-size:14px;color:var(--sub);}
+.nav-links a{transition:color .3s var(--slow);}.nav-links a:hover{color:var(--orange2);}
+.nav-cta{border-radius:999px;padding:12px 20px;font:700 13px/1 Inter,sans-serif;background:linear-gradient(135deg,var(--orange),#ff9a4a);color:#000;box-shadow:0 10px 30px rgba(255,106,0,.24);transition:transform .35s var(--slow);}
+.nav-cta:hover{transform:translateY(-2px);}
+.hero{position:relative;min-height:100vh;display:grid;align-items:center;overflow:hidden;background:#000;}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.45) saturate(.9);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.3),rgba(0,0,0,.92)),radial-gradient(60% 45% at 22% 30%,rgba(255,106,0,.32),transparent 74%);}
+.hero-grid{position:relative;z-index:2;width:100%;max-width:1720px;min-width:0;margin-inline:auto;padding:128px clamp(20px,6vw,80px) 86px;display:grid;gap:48px;align-items:end;}
+@media(min-width:980px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:60px;}}
+.eyebrow{font:600 11px/1.6 Inter,monospace;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);margin-bottom:18px;}
+.hero-title{font:700 clamp(46px,8vw,118px)/.9 Unbounded,sans-serif;text-transform:uppercase;max-width:11ch;}
+.hero-title em{font-style:normal;color:var(--orange2);text-shadow:0 0 44px rgba(255,106,0,.25);}
+.hero-lead{margin-top:20px;max-width:64ch;color:var(--sub);font-size:clamp(16px,2vw,20px);font-weight:300;line-height:1.75;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;font:700 14px/1 Inter,sans-serif;border-radius:10px;transition:transform .35s var(--slow),background-color .35s var(--slow),border-color .35s var(--slow);}
+.btn-primary{background:linear-gradient(135deg,var(--orange),#ff9a4a);color:#000;border:0;box-shadow:0 12px 28px rgba(255,106,0,.2);}
+.btn-primary:hover{transform:translateY(-3px);}
+.btn-ghost{color:var(--sub);border:1px solid var(--line2);}
+.btn-ghost:hover{color:var(--orange2);border-color:var(--orange);}
+.hero-meta{border:1px solid var(--line2);border-radius:16px;padding:28px;background:linear-gradient(180deg,rgba(8,8,8,.78),rgba(0,0,0,.35));backdrop-filter:blur(8px);}
+.hero-meta .row{border-bottom:1px solid var(--line);padding-bottom:16px;}
+.hero-meta .row:last-child{border-bottom:0;padding-bottom:0;}
+.hero-meta dt{font:600 10px/1.6 Inter,monospace;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;}
+.hero-meta dd{margin-top:6px;font-weight:600;color:#fff;}
+.ticker{display:flex;gap:24px;flex-wrap:wrap;margin-top:22px;}
+.ticker span{font:600 11px/1 Inter,monospace;color:var(--orange2);letter-spacing:.18em;text-transform:uppercase;}
+.motivation{padding:28px;border:1px solid var(--line2);border-radius:18px;background:linear-gradient(160deg,rgba(255,106,0,.14),rgba(0,0,0,.86));}
+.motivation p{font:700 clamp(18px,2.4vw,26px)/1.5 Unbounded,sans-serif;color:#fff;text-transform:uppercase;}
+.motivation span{display:block;margin-top:10px;color:var(--orange2);font:600 10px/1.4 Inter,monospace;letter-spacing:.18em;text-transform:uppercase;}
+main{display:flex;flex-direction:column;padding:0;}
+section{padding:96px 0;position:relative;}
+.section-head{max-width:980px;margin-bottom:38px;}
+.section-title{font:700 clamp(30px,4.8vw,62px)/.98 Unbounded,sans-serif;text-transform:uppercase;max-width:14ch;}
+.section-head p{margin-top:12px;color:var(--sub);font-size:17px;font-weight:300;line-height:1.7;max-width:820px;}
+.row-line{height:1px;width:100%;margin-bottom:34px;background:linear-gradient(90deg,transparent,var(--orange),transparent);}
+.stats-grid{display:grid;gap:16px;grid-template-columns:repeat(2,1fr);}
+@media(min-width:760px){.stats-grid{grid-template-columns:repeat(4,1fr);}}
+.stat{padding:28px 20px;border:1px solid var(--line);border-radius:16px;transition:transform .4s var(--slow),border-color .4s var(--slow);background:linear-gradient(180deg,#0f0f0f,#060606);}
+.stat:hover{transform:translateY(-5px);border-color:var(--orange);}
+.stat .num{font:700 clamp(22px,3vw,38px)/1 Unbounded,sans-serif;color:var(--orange2);margin-bottom:10px;}
+.stat .lbl{font:500 11px/1.5 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.cards{display:grid;gap:16px;grid-template-columns:1fr;}
+@media(min-width:740px){.cards{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1180px){.cards{grid-template-columns:repeat(3,1fr);}}
+.card{border:1px solid var(--line);border-radius:16px;padding:28px;background:linear-gradient(180deg,#131313,#070707);transition:transform .4s var(--slow),border-color .4s var(--slow),box-shadow .4s var(--slow);min-width:0;}
+.card:hover{transform:translateY(-8px);border-color:var(--orange);box-shadow:0 24px 48px rgba(0,0,0,.55),0 0 0 1px rgba(255,106,0,.2);}
+.card h3{margin-bottom:10px;font:700 18px/1.25 Unbounded,sans-serif;text-transform:uppercase;}
+.card p{color:var(--sub);font-size:14px;font-weight:300;line-height:1.7;}
+.icon-ring{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;margin-bottom:20px;background:radial-gradient(circle at 30% 30%,rgba(255,106,0,.2),rgba(0,0,0,.55));border:1px solid var(--line2);color:var(--orange2);transition:transform .4s var(--slow);}
+.card:hover .icon-ring{transform:scale(1.08) rotate(6deg);}
+.trainers-grid{display:grid;gap:16px;grid-template-columns:1fr;}
+@media(min-width:740px){.trainers-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1100px){.trainers-grid{grid-template-columns:repeat(3,1fr);}}
+.trainer{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:linear-gradient(180deg,#111111,#070707);transition:transform .4s var(--slow),border-color .4s var(--slow);}
+.trainer:hover{transform:translateY(-6px);border-color:var(--orange);}
+.trainer-avatar{position:relative;height:260px;display:grid;place-items:center;background:radial-gradient(circle at 50% 30%,rgba(255,106,0,.22),rgba(0,0,0,.88));border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
+.initials{font:700 64px/1 Unbounded,sans-serif;color:#fff;text-transform:uppercase;letter-spacing:-.02em;text-shadow:0 0 30px rgba(255,106,0,.32);}
+.trainer-name{padding:18px 20px 0;font:700 18px/1.2 Unbounded,sans-serif;text-transform:uppercase;}
+.trainer-role{padding:6px 20px 18px;color:var(--orange2);font:600 12px/1.4 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;}
+.trainer-note{padding:0 20px 22px;color:var(--sub);font-size:13px;line-height:1.6;font-weight:300;}
+.price-list{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#131313,#070707);}
+.price-row{display:grid;grid-template-columns:1.4fr auto;gap:18px;align-items:center;padding:20px 24px;border-bottom:1px solid var(--line);transition:background-color .4s var(--slow),padding-left .4s var(--slow);}
+.price-row:last-child{border-bottom:0;}
+.price-row:hover{background:rgba(255,106,0,.07);padding-left:32px;}
+.price-row .name{font-weight:600;}
+.price-row .desc{margin-top:4px;color:var(--sub);font-size:13px;font-weight:300;}
+.price-row .val{font:700 19px/1 Unbounded,sans-serif;color:var(--orange2);white-space:nowrap;}
+.review-grid{display:grid;gap:16px;grid-template-columns:1fr;}
+@media(min-width:760px){.review-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:1200px){.review-grid{grid-template-columns:repeat(3,1fr);}}
+.review{border:1px solid var(--line);border-radius:16px;padding:28px;background:linear-gradient(180deg,#121212,#070707);transition:transform .4s var(--slow),border-color .4s var(--slow);}
+.review:hover{transform:translateY(-5px);border-color:var(--orange);}
+.review .stars{color:var(--orange);margin-bottom:14px;letter-spacing:.14em;font-size:15px;}
+.review p{color:var(--sub);font-size:14px;font-weight:300;line-height:1.65;}
+.review footer{margin-top:16px;font:600 14px/1.3 Inter,sans-serif;color:#fff;}
+.review footer span{display:block;color:var(--muted);font-size:12px;margin-top:3px;font-weight:400;}
+.branch-grid{display:grid;gap:16px;grid-template-columns:1fr;}
+@media(min-width:900px){.branch-grid{grid-template-columns:repeat(2,1fr);}}
+.branch{border:1px solid var(--line);border-radius:16px;padding:28px;background:linear-gradient(180deg,#121212,#070707);transition:transform .4s var(--slow),border-color .4s var(--slow);}
+.branch:hover{transform:translateY(-6px);border-color:var(--orange);}
+.branch h3{margin-bottom:14px;font:700 18px/1.2 Unbounded,sans-serif;text-transform:uppercase;color:var(--orange2);}
+.branch p,.branch a{display:block;color:var(--sub);font-size:14px;margin-top:7px;transition:color .3s var(--slow);}
+.branch a:hover{color:var(--orange);}
+.lead-grid{display:grid;gap:48px;align-items:start;}
+@media(min-width:980px){.lead-grid{grid-template-columns:.9fr 1.1fr;}}
+.lead-text p{color:var(--sub);font-size:17px;font-weight:300;line-height:1.7;max-width:620px;}
+.form{display:grid;gap:16px;padding:30px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#121212,#070707);}
+.field{display:flex;flex-direction:column;gap:8px;}
+.field label{color:var(--sub);font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:600;}
+.field input,.field textarea,.field select{background:#020202;border:1px solid var(--line2);border-radius:10px;padding:14px 16px;color:#fff;font-size:15px;transition:border-color .35s var(--slow),box-shadow .35s var(--slow);}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--orange);box-shadow:0 0 0 2px rgba(255,106,0,.2);}
+.field textarea{min-height:120px;resize:vertical;}
+.form-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.status{color:var(--muted);font-size:13px;min-height:18px;}
+footer{padding:38px 0 60px;border-top:1px solid var(--line);background:#000;}
+.footer-grid{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:13px;}
+.footer-grid a{color:var(--orange2);transition:color .3s var(--slow);}
+.footer-grid a:hover{color:var(--orange);}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .95s var(--slow),transform .95s var(--slow);}
+.reveal.in{opacity:1;transform:none;}
+.work-reveal{opacity:0;transform:translateY(24px) scale(.98);transition:opacity .95s var(--slow),transform .95s var(--slow);}
+.work-reveal.in{opacity:1;transform:none;}
+@media(max-width:760px){
+nav{flex-wrap:wrap;gap:12px;}
+.nav-links{width:100%;order:3;gap:10px;font-size:13px;}
+.nav-cta{order:2;margin-left:auto;}
+.hero{min-height:100svh;}
+.hero-grid{padding-top:88px;gap:28px;}
+.hero-title{font-size:clamp(34px,12vw,48px);}
+.hero-lead{font-size:15px;}
+.motivation{padding:20px;}
+.section-title{font-size:clamp(28px,8vw,38px);}
+.section-head{margin-bottom:24px;}
+.stats-grid,.cards,.trainer-grid,.review-grid,.branch-grid{grid-template-columns:1fr;}
+.price-row{grid-template-columns:1fr;gap:8px;padding:16px 18px;}
+.hero-meta{padding:20px;gap:12px;}
+.form{padding:20px;}
+.form-actions .btn{width:100%;}
+.ticker span{font-size:10px;letter-spacing:.12em;}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;}}
+
+/* ============ EGG / PHOENIX SCROLL ============ */
+.egg-rail{
+  position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:100;pointer-events:none;
+  display:none;
+}
+@media(min-width:880px){.egg-rail{display:block;}}
+@media(max-width:879px){.egg-rail{display:block;right:8px;bottom:8px;top:auto;transform:none;width:auto;height:auto;margin:0;} .egg-rail .egg-progress-label{display:none;}}>
+.egg-stage{
+  width:74px;height:126px;position:relative;
+  margin-inline:auto;
+  perspective: 600px;
+}
+.egg-shell{
+  position:absolute;left:50%;top:16px;transform:translateX(-50%) rotate(0deg) scale(1);
+  width:62px;height:84px;border-radius:58% 42% / 64% 36%;
+  background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.16), transparent 28%), linear-gradient(180deg,#f2e6d6,#b78a56);
+  box-shadow: inset 0 -8px 14px rgba(0,0,0,.25), 0 8px 20px rgba(255,106,0,.14);
+  border:2px solid #e2b073;
+  transform-origin: 50% 100%;
+  animation: sway 1.8s ease-in-out infinite alternate;
+}
+.egg-stage.crack-1 .egg-shell::before,
+.egg-stage.crack-2 .egg-shell::after,
+.egg-stage.crack-3 .egg-shell .crack{
+  opacity:1;
+}
+.egg-shell::before{
+  content:"";position:absolute;inset:0;
+  background:transparent;
+  opacity:0;
+  transition:opacity .3s var(--slow);
+  background-image: linear-gradient(135deg, transparent 46%, rgba(70,30,0,.65) 46%, rgba(70,30,0,.65) 54%, transparent 54%);
+  clip-path: polygon(0 35%, 35% 35%, 35% 0);
+}
+.egg-shell::after{
+  content:"";position:absolute;inset:0;opacity:0;transition:opacity .3s var(--slow);
+  background-image: linear-gradient(45deg, transparent 46%, rgba(90,40,0,.75) 46%, rgba(90,40,0,.75) 54%, transparent 54%);
+  clip-path: polygon(65% 65%, 100% 65%, 100% 100%);
+}
+.egg-crack{
+  position:absolute;inset:0;opacity:0;transition:opacity .3s var(--slow);
+  background-image:
+    linear-gradient(45deg, transparent 48%, rgba(80,35,0,.7) 48%, rgba(80,35,0,.7) 52%, transparent 52%),
+    linear-gradient(20deg, transparent 48%, rgba(80,35,0,.7) 48%, rgba(80,35,0,.7) 52%, transparent 52%),
+    linear-gradient(70deg, transparent 48%, rgba(80,35,0,.7) 48%, rgba(80,35,0,.7) 52%, transparent 52%);
+  mix-blend-mode:multiply;
+  pointer-events:none;
+}
+.egg-rail .crack-1 .egg-shell::before{opacity:1;}
+.egg-rail .crack-2 .egg-shell::after{opacity:1;}
+.egg-rail .crack-3 .egg-crack{opacity:1;}
+@keyframes sway{
+  0%{transform:translateX(-50%) rotate(-8deg) scale(var(--egg-scale,1));}
+  100%{transform:translateX(-50%) rotate(8deg) scale(var(--egg-scale,1));}
+}
+.phoenix{
+  position:absolute;left:50%;top:12px;transform:translateX(-50%) scale(.15);
+  width:96px;height:96px;
+  opacity:0;filter:drop-shadow(0 0 18px rgba(255,106,0,.6));
+  transition:opacity .5s var(--slow), transform .75s var(--slow), filter .75s var(--slow);
+  pointer-events:none;
+  z-index:3;
+}
+.egg-rail.hatched .egg-shell{
+  opacity:0;
+  transform:translateX(-50%) rotate(0deg) scale(0.15);
+  transition:opacity .35s var(--slow), transform .35s var(--slow);
+}
+.egg-rail.hatched .phoenix{
+  opacity:1;
+  transform:translateX(-50%) scale(1);
+}
+.phoenix-body{
+  width:72px;height:84px;margin:0 auto;position:relative;
+}
+.phoenix-head{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 38% 38%,#ff6a00,#d63e00);margin:0 auto 4px;position:relative;}
+.phoenix-beak{position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:14px solid #ffcc66;}
+.phoenix-torso{width:42px;height:46px;border-radius:44% 44% 52% 52%;background:linear-gradient(180deg,#ff7a0a,#d64000);margin:0 auto;position:relative;}
+.phoenix-wing{position:absolute;width:28px;height:44px;border-radius:50%;background:linear-gradient(180deg,#ff9a4a,#d64000);transform:rotate(-20deg);top:24px;left:-18px;animation:wing .7s ease-in-out infinite alternate;}
+.phoenix-wing.r{left:auto;right:-18px;transform:rotate(20deg);animation-direction:alternate-reverse;}
+@keyframes wing{0%{transform:rotate(-28deg);}100%{transform:rotate(-18deg);}}
+.phoenix.wing.r{transform:rotate(28deg);}
+.egg-progress-label{
+  margin-top:12px;text-align:center;font:600 10px/1.4 Inter,monospace;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;
+}
+.egg-rail .egg-stage::after{
+  content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:46px;height:12px;
+  border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(255,106,0,.18),transparent 70%);filter:blur(6px);
+}
+@media(prefers-reduced-motion:reduce){.egg-shell{animation:none!important;}.phoenix-wing{animation:none!important;}}
+@media(max-width:880px){.egg-rail{display:none;}}
+</style></head><section class="hero" id="top">
+<img class="hero-bg" src="assets/photos/1.jpg" alt="Fenix Fitness Club" loading="eager">
+<div class="hero-overlay"></div>
+<div class="hero-grid">
+<div>
+<p class="eyebrow">Фитнес-клуб • Снежинск • Оранжево-чёрный стиль</p>
+<h1 class="hero-title">FENIX <em>rising</em> с первого шага</h1>
+<p class="hero-lead">Тренажёрный зал премиум-класса и персональные программы, без переплат. Тренируй силу, выносливость и характер в уютной атмосфере «Феникса».</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="tel:+79222322758">Позвонить администратору</a>
+<a class="btn btn-ghost" href="https://vk.com/public170354319" target="_blank" rel="noopener">ВКонтакте</a>
+<a class="btn btn-ghost" href="https://wa.me/79222322758" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+<div class="motivation" style="margin-top:72px;">
+<p>Тренуешься — растёшь, падаешь, восстанавливаешься. В этом и есть суть Феникса.</p>
+<span>Твой путь к силе начинается в клубе «Феникс»</span>
+</div>
+<div class="ticker">
+<span>Пн-Пт 8:00–22:00</span><span>Сб 10:00–16:00</span><span>Вс 10:00–16:00</span>
+<span>Разовое занятие: цены уточняйте</span><span>Безлимит 3 000 ₽</span><span>Детский абонемент 990 ₽</span>
+</div>
+</div>
+<dl class="hero-meta">
+<div class="row"><dt>Адрес</dt><dd>ул. Ленина 12, Снежинск</dd></div>
+<div class="row"><dt>Часы</dt><dd>Пн-Пт 8:00-22:00, Сб-Вс 10:00-16:00</dd></div>
+<div class="row"><dt>Телефон</dt><dd>+7 (922) 232-27-58</dd></div>
+<div class="row"><dt>Формат</dt><dd>Силовые и кардио-тренировки, персональные и групповые</dd></div>
+</dl>
+</div>
+<div class="hero-wave"></div>
+</section><main id="main">
+<section class="reveal"><div class="shell"><div class="section-head"><span class="eyebrow">Цифры</span><h2 class="section-title">Клуб в реальных цифрах</h2><p>Четыре зала, много места и тренеры, которые помогают. Без пустых обещаний и давки.</p></div>
+<div class="stats-grid">
+<div class="stat"><div class="num">4 зала</div><div class="lbl">Полноценные пространства</div></div>
+<div class="stat"><div class="num">От 8:00</div><div class="lbl">Раннее открытие</div></div>
+<div class="stat"><div class="num">3 000 ₽</div><div class="lbl">Безлимит на месяц</div></div>
+<div class="stat"><div class="num">120+ клиентов</div><div class="lbl">Постоянная база</div></div>
+</div></div></section><section id="services" class="reveal"><div class="shell"><div class="section-head"><span class="eyebrow">Направления</span><h2 class="section-title">Что есть в клубе</h2><p>Классический тренажёрный зал, персональные программы и групповые занятия с вниманием к технике.</p></div>
+<div class="cards">
+<article class="card"><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="2" rx="1"/><rect x="2" y="9" width="4" height="6" rx="2"/><rect x="18" y="9" width="4" height="6" rx="2"/></svg></div><h3>Тренажёрный зал</h3><p>Кардио и силовой парк, современные станки, удобный spacing для индивидуальных тренировок.</p></article>
+<article class="card"><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="2" rx="1"/><rect x="2" y="9" width="4" height="6" rx="2"/><rect x="18" y="9" width="4" height="6" rx="2"/></svg></div><h3>Персональный тренер</h3><p>Программа под ваши цели, анализ техники, питание и восстановление без травм.</p></article>
+<article class="card"><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="2" rx="1"/><rect x="2" y="9" width="4" height="6" rx="2"/><rect x="18" y="9" width="4" height="6" rx="2"/></svg></div><h3>Групповые программы</h3><p>Аэробика, стретчинг, функциональный тренинг, йога и короткие форматы для занятых.</p></article>
+<article class="card"><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="2" rx="1"/><rect x="2" y="9" width="4" height="6" rx="2"/><rect x="18" y="9" width="4" height="6" rx="2"/></svg></div><h3>Восстановление</h3><p>Разминка, МФР, работа над осанкой, коленями, возвращение после перерыва.</p></article>
+<article class="card"><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="2" rx="1"/><rect x="2" y="9" width="4" height="6" rx="2"/><rect x="18" y="9" width="4" height="6" rx="2"/></svg></div><h3>Детский фитнес</h3><p>Небольшие группы, знакомство с движением и безопасной физической активностью.</p></article>
+<article class="card"><div class="icon-ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="2" rx="1"/><rect x="2" y="9" width="4" height="6" rx="2"/><rect x="18" y="9" width="4" height="6" rx="2"/></svg></div><h3>Массаж и восстановление</h3><p>Ручная работа с мышцами, снятие усталости после тренировок.</p></article>
+</div></div></section><section id="trainers" class="reveal"><div class="shell"><div class="section-head"><span class="eyebrow">Команда</span><h2 class="section-title">Тренеры</h2><p>Сертифицированные тренеры, которые помогают не просто «потренироваться», а добить цель без травм. Фото и профили заменить вашими реальными тренерами.</p></div>
+<div class="trainers-grid">
+<article class="trainer"><div class="trainer-avatar"><span class="initials">AL</span></div><div class="trainer-name">Александр</div><div class="trainer-role">Персональный тренер</div><div class="trainer-note">Силовой тренинг, техника, программа по целям. Группы и индивидуальные занятия.</div></article>
+<article class="trainer"><div class="trainer-avatar"><span class="initials">OL</span></div><div class="trainer-name">Олеся</div><div class="trainer-role">Фитнес-тренер</div><div class="trainer-note">Аэробика, стретчинг, коррекция движений и здоровье спины.</div></article>
+<article class="trainer"><div class="trainer-avatar"><span class="initials">VE</span></div><div class="trainer-name">Вероника</div><div class="trainer-role">Групповые программы</div><div class="trainer-note">Йога, функциональный тренинг, калланетика и поддержка мотивации.</div></article>
+<article class="trainer"><div class="trainer-avatar"><span class="initials">MI</span></div><div class="trainer-name">Михаил</div><div class="trainer-role">Силовой тренинг</div><div class="trainer-note">Пауэрлифтинг, техника тяжёлых движений, питание и восстановление.</div></article>
+<article class="trainer"><div class="trainer-avatar"><span class="initials">SV</span></div><div class="trainer-name">Светлана</div><div class="trainer-role">Восстановление</div><div class="trainer-note">МФР, стопа/колено, возвращение после перерыва без травм.</div></article>
+<article class="trainer"><div class="trainer-avatar"><span class="initials">VI</span></div><div class="trainer-name">Виктор</div><div class="trainer-role">Бокс / кросс-тренинг</div><div class="trainer-note">Координация, выносливость, интенсивные тренировки.</div></article>
+</div></div></section><section id="prices" class="reveal"><div class="shell"><div class="section-head"><span class="eyebrow">Цены</span><h2 class="section-title">Чтобы записаться без сюрпризов</h2><p>Прайс по данным FENIX Gym (Снежинск). Цены могут отличаться — уточняйте в клубе перед покупкой.</p></div>
+<div class="price-list">
+<div class="price-row"><div><div class="name">Разовое занятие</div><div class="desc">В зал, включая душ/кулер</div></div><div class="val">300 ₽</div></div>
+<div class="price-row"><div><div class="name">Школьный абонемент</div><div class="desc">1500 ₽ для школьников</div></div><div class="val">1500 ₽</div></div>
+<div class="price-row"><div><div class="name">Студент / пенсионер</div><div class="desc">1800 ₽ льготный период</div></div><div class="val">1800 ₽</div></div>
+<div class="price-row"><div><div class="name">Абонемент на 8 занятий</div><div class="desc">1900 ₽</div></div><div class="val">1900 ₽</div></div>
+<div class="price-row"><div><div class="name">Абонемент на 12 занятий</div><div class="desc">2500 ₽</div></div><div class="val">2500 ₽</div></div>
+<div class="price-row"><div><div class="name">Безлимит на месяц</div><div class="desc">3000 ₽</div></div><div class="val">3000 ₽</div></div>
+<div class="price-row"><div><div class="name">Семейный безлимит</div><div class="desc">3300 ₽ за двоих</div></div><div class="val">3300 ₽</div></div>
+<div class="price-row"><div><div class="name">Детский абонемент</div><div class="desc">990 ₽ в месяц</div></div><div class="val">990 ₽</div></div>
+</div><p class="note">Цены из карточки FENIX Gym; могут отличаться (л/готы, акции). Уточняйте перед оплатой.</p></div></section>
+
+<section id="reviews" class="reveal"><div class="shell"><div class="section-head"><span class="eyebrow">Отзывы</span><h2 class="section-title">Что говорят клиенты</h2><p>Реальные отзывы с Яндекс/2ГИС/региональных каталогов.</p></div>
+<div class="review-grid">
+<article class="review"><div class="stars">★★★★★</div><p>Хороший зал. Тренера доброжелательны и готовы подсказать при надобности, приятная цена, зал не перегружен.</p><footer>Анонимно</footer></article>
+<article class="review"><div class="stars">★★★★★</div><p>Замечательный клуб рядом с домом. Душ в раздевалках, кулер в зале, специальное напольное покрытие.</p><footer>Вероника Бродягина</footer></article>
+<article class="review"><div class="stars">★★★★★</div><p>Отличный зал, занимаюсь всю неделю, в зале чисто, свежо, много тренажёров, отзывчивые тренеры.</p><footer>Кирилл</footer></article>
+<article class="review"><div class="stars">★★★★☆</div><p>В зале есть кардио-зона и тренажёрка, купить абонемент + персональные занятия, занималась у Олеси.</p><footer>Стася</footer></article>
+<article class="review"><div class="stars">★★★★★</div><p>Замечательный зал!!!! Удобные тренажеры, отзывчивые тренера, всегда подскажут.</p><footer>Александр</footer></article>
+<article class="review"><div class="stars">★★★★★</div><p>Уютный зал, опытные тренера, есть всё для качественной тренировки.</p><footer>Андрей</footer></article>
+</div></div></section><section id="branches" class="reveal"><div class="shell"><div class="section-head"><span class="eyebrow">Филиалы</span><h2 class="section-title">Где мы</h2><p>Два отделения в Снежинске.</p></div>
+<div class="branch-grid">
+<article class="branch"><h3>Филиал 1 — Дзержинского</h3><p>ул. Дзержинского, 28, Снежинск</p><p>+7 (922) 232-27-58</p><a href="tel:+79222322758">Позвонить</a><a href="https://vk.com/public170354319" target="_blank" rel="noopener">ВКонтакте</a></article>
+<article class="branch"><h3>Филиал 2 — Сиреневая</h3><p>Сиреневая ул., 5, Снежинск</p><p>Телефон уточняйте</p><a href="https://vk.com/public170354319" target="_blank" rel="noopener">ВКонтакте</a></article>
+</div></div></section><section id="lead" class="reveal"><div class="shell"><div class="lead-grid">
+<div class="lead-text"><div class="section-head" style="margin-bottom:0"><span class="eyebrow">Запись</span><h2 class="section-title">Оставьте заявку</h2></div><p>Напишите контакты, администратор поможет с программой и расписанием.</p></div>
+<form class="form" id="leadForm" novalidate>
+<div class="field"><label for="name">Имя</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Как обращаться"></div>
+<div class="field"><label for="phone">Телефон</label><input id="phone" name="phone" type="tel" required placeholder="+7 ___ ___-__-__"></div>
+<div class="field"><label for="service">Интересует</label><select id="service" name="service"><option value="">Выберите</option><option value="зал">Тренажёрный зал</option><option value="пт">Персональные тренировки</option><option value="гп">Группы</option><option value="другое">Другое</option></select></div>
+<div class="field"><label for="msg">Комментарий</label><textarea id="msg" placeholder="Цели, опыт, удобное время"></textarea></div>
+<div class="form-actions"><button class="btn btn-primary" type="submit">Отправить</button><a class="btn btn-ghost" href="tel:+79222322758">Позвонить</a></div>
+<p class="status" id="formStatus"></p>
+</form>
+</div></div></section><section id="contacts" class="reveal"><div class="shell"><div class="section-head"><span class="eyebrow">Контакты</span><h2 class="section-title">Как нас найти</h2></div>
+<div class="branch-grid">
+<article class="branch"><h3>Снежинск, ул. Ленина 12</h3><p>Феникс-Fitness Club, ул. Ленина, 12</p><p>Пн-Пт 08:00-22:00, Сб-Вс 10:00-16:00</p><a href="tel:+79222322758">+7 (922) 232-27-58</a><a href="https://vk.com/public170354319" target="_blank" rel="noopener">ВКонтакте</a><a href="https://wa.me/79222322758" target="_blank" rel="noopener">WhatsApp</a></article>
+</div></div></section>
+<footer><div class="shell"><div class="footer-grid"><p>© 2026 FENIX Fitness Club.</p><p>Цены и часы уточняйте у администратора.</p></div></div></footer>
+<script>
+const form=document.getElementById('leadForm');
+const status=document.getElementById('formStatus');
+form.addEventListener('submit', async (e)=>{
+ e.preventDefault();
+ if(!form.phone.value.trim()){status.textContent='Укажите телефон или способ связи.';form.phone.focus();return;}
+ const data={source:'fenix-site',name:form.name.value.trim(),phone:form.phone.value.trim(),service:form.service.value.trim(),msg:form.msg.value.trim(),url:location.href};
+ status.textContent='Отправляем...';
+ try{
+   const res=await fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+   if(res.ok){status.textContent='Заявка отправлена. Спасибо.';form.reset();}
+   else throw new Error('bad');
+ }catch(e){
+   const t='+79222322758';
+   window.location.href=`tel:${t}`;
+   status.textContent='Не удалось отправить онлайн. Позвоните или напишите в WhatsApp.';
+ }
+});
+const targets=document.querySelectorAll('main > section,.card,.review,.trainer,.price-row,.branch');
+targets.forEach((el,i)=>{el.classList.add('reveal');el.style.transitionDelay=((i%8)*75)+'ms';});
+if('IntersectionObserver' in window){
+ const io=new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+ targets.forEach(el=>io.observe(el));
+}else targets.forEach(el=>el.classList.add('in'));
+
+</script>
+</body>
+</html>
