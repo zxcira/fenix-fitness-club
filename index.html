@@ -45,6 +45,7 @@
   },
   "areaServed": "Снежинск",
   "sameAs": ["https://vk.com/public170354319"],
+  "hasMap": "https://2gis.ru/snezhinsk/firm/70000001105917869",
   "openingHoursSpecification": [
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"22:00"},
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"10:00","closes":"16:00"}
@@ -184,28 +185,21 @@ section{padding:96px 0;position:relative;}
 .review blockquote{color:var(--sub);font-size:14px;font-weight:300;line-height:1.65;}
 .review figcaption{margin-top:16px;font:600 14px/1.3 Inter,sans-serif;color:#fff;}
 
-.branch-grid{display:grid;gap:16px;grid-template-columns:1fr;}
-@media(min-width:900px){.branch-grid{grid-template-columns:repeat(2,1fr);}}
-.branch{border:1px solid var(--line);border-radius:16px;padding:28px;background:linear-gradient(180deg,#121212,#070707);transition:transform .4s var(--slow),border-color .4s var(--slow);}
-.branch:hover{transform:translateY(-6px);border-color:var(--orange);}
-.branch h3{margin-bottom:14px;font:700 18px/1.2 Unbounded,sans-serif;text-transform:uppercase;color:var(--orange2);}
-.branch p,.branch a{display:block;color:var(--sub);font-size:14px;margin-top:7px;transition:color .3s var(--slow);}
-.branch a:hover{color:var(--orange);}
-.branch a.tel{color:#fff;font-weight:600;}
-
-.lead-grid{display:grid;gap:48px;align-items:start;grid-template-columns:minmax(0,1fr);}
-.lead-grid > *{min-width:0;}
-@media(min-width:980px){.lead-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);}}
-.lead-text p{color:var(--sub);font-size:17px;font-weight:300;line-height:1.7;max-width:620px;}
-.form{display:grid;gap:16px;padding:30px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#121212,#070707);min-width:0;}
-.field{display:flex;flex-direction:column;gap:8px;min-width:0;}
-.field label{color:var(--sub);font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:600;}
-.field input,.field textarea,.field select{width:100%;min-width:0;background:#020202;border:1px solid var(--line2);border-radius:10px;padding:14px 16px;color:#fff;font-size:15px;transition:border-color .35s var(--slow),box-shadow .35s var(--slow);}
-.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--orange);box-shadow:0 0 0 2px rgba(255,106,0,.2);}
-.field textarea{min-height:120px;resize:vertical;}
-.form-actions{display:flex;gap:14px;flex-wrap:wrap;}
-.status{color:var(--muted);font-size:13px;min-height:18px;}
-.status.ok{color:#7bd88f;}
+.contact-grid{display:grid;gap:20px;grid-template-columns:minmax(0,1fr);}
+@media(min-width:920px){.contact-grid{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:stretch;}}
+.contact-card{border:1px solid var(--line);border-radius:20px;padding:32px;background:linear-gradient(180deg,#121212,#070707);min-width:0;display:flex;flex-direction:column;}
+.contact-card h3{font:700 clamp(22px,2.4vw,32px)/1.15 Unbounded,sans-serif;text-transform:uppercase;color:var(--orange2);}
+.contact-card .meta{margin-top:12px;color:var(--sub);font-size:15px;line-height:1.75;font-weight:300;}
+.contact-actions{display:grid;gap:12px;margin-top:auto;padding-top:24px;grid-template-columns:repeat(2,minmax(0,1fr));}
+.contact-actions .btn{min-width:0;text-align:center;}
+.contact-actions .btn-primary{grid-column:1/-1;}
+.map-card{position:relative;display:block;border:1px solid var(--line);border-radius:20px;overflow:hidden;min-height:340px;background:#0b0b0b;transition:transform .4s var(--slow),border-color .4s var(--slow);}
+.map-card:hover{transform:translateY(-6px);border-color:var(--orange);}
+.map-preview{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(.2) brightness(.72) contrast(1.05);transition:filter .5s var(--slow),transform .8s var(--slow);}
+.map-card:hover .map-preview{filter:none;transform:scale(1.05);}
+.map-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1),rgba(0,0,0,.8));}
+.map-pin{position:absolute;left:50%;top:50%;z-index:2;width:16px;height:16px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 7px rgba(255,106,0,.28),0 0 0 16px rgba(255,106,0,.12),0 0 24px rgba(255,106,0,.6);transform:translate(-50%,-50%);}
+.map-label{position:absolute;left:20px;bottom:20px;z-index:2;display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;background:linear-gradient(135deg,var(--orange),#ff9a4a);color:#000;font:700 14px/1 Inter,sans-serif;}
 
 footer{padding:38px 0 60px;border-top:1px solid var(--line);background:#000;}
 .footer-grid{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:13px;}
@@ -226,60 +220,18 @@ footer{padding:38px 0 60px;border-top:1px solid var(--line);background:#000;}
   .motivation{padding:20px;margin-top:36px;}
   .section-title{font-size:clamp(28px,8vw,38px);}
   .section-head{margin-bottom:24px;}
-  .stats-grid,.cards,.trainers-grid,.review-grid,.branch-grid{grid-template-columns:1fr;}
+  .stats-grid,.cards,.trainers-grid,.review-grid,.contact-grid{grid-template-columns:1fr;}
   .price-row{grid-template-columns:1fr;gap:8px;padding:16px 18px;}
   .hero-meta{padding:20px;}
-  .form{padding:20px;}
-  .form-actions .btn{width:100%;}
+  .contact-card{padding:22px;}
+  .map-card{min-height:260px;}
+  .contact-actions .btn{padding:13px 14px;font-size:13px;}
   .ticker span{font-size:10px;letter-spacing:.12em;}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   .reveal{opacity:1;transform:none;}
-  .egg-shell,.phoenix-wing{animation:none!important;}
 }
-
-/* ============ ФЕНИКС: яйцо -> трещины -> вылупление (по скроллу) ============ */
-.egg-rail{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:30;pointer-events:none;display:none;}
-/* показываем только там, где есть свободное поле справа (ширина контейнера 1720 + отступы), чтобы яйцо не наезжало на контент */
-@media(min-width:1800px){.egg-rail{display:block;}}
-.egg-stage{width:74px;height:126px;position:relative;margin-inline:auto;perspective:600px;}
-.egg-shell{
-  position:absolute;left:50%;top:16px;width:62px;height:84px;
-  transform:translateX(-50%) scale(var(--egg-scale,1));
-  border-radius:58% 42% / 64% 36%;
-  background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.16),transparent 28%),linear-gradient(180deg,#f2e6d6,#b78a56);
-  box-shadow:inset 0 -8px 14px rgba(0,0,0,.25),0 8px 20px rgba(255,106,0,.14);
-  border:2px solid #e2b073;transform-origin:50% 100%;
-  animation:sway 1.8s ease-in-out infinite alternate;
-  transition:opacity .35s var(--slow),transform .5s var(--slow);
-}
-@keyframes sway{
-  0%{transform:translateX(-50%) rotate(-8deg) scale(var(--egg-scale,1));}
-  100%{transform:translateX(-50%) rotate(8deg) scale(var(--egg-scale,1));}
-}
-.egg-shell::before,.egg-shell::after{content:"";position:absolute;inset:0;opacity:0;transition:opacity .3s var(--slow);}
-.egg-shell::before{background-image:linear-gradient(135deg,transparent 46%,rgba(70,30,0,.65) 46%,rgba(70,30,0,.65) 54%,transparent 54%);clip-path:polygon(0 35%,35% 35%,35% 0);}
-.egg-shell::after{background-image:linear-gradient(45deg,transparent 46%,rgba(90,40,0,.75) 46%,rgba(90,40,0,.75) 54%,transparent 54%);clip-path:polygon(65% 65%,100% 65%,100% 100%);}
-.egg-crack{position:absolute;inset:0;opacity:0;transition:opacity .3s var(--slow);pointer-events:none;mix-blend-mode:multiply;background-image:
-  linear-gradient(45deg,transparent 48%,rgba(80,35,0,.7) 48%,rgba(80,35,0,.7) 52%,transparent 52%),
-  linear-gradient(20deg,transparent 48%,rgba(80,35,0,.7) 48%,rgba(80,35,0,.7) 52%,transparent 52%),
-  linear-gradient(70deg,transparent 48%,rgba(80,35,0,.7) 48%,rgba(80,35,0,.7) 52%,transparent 52%);}
-.egg-rail[data-crack="1"] .egg-shell::before{opacity:1;}
-.egg-rail[data-crack="2"] .egg-shell::after{opacity:1;}
-.egg-rail[data-crack="3"] .egg-crack{opacity:1;}
-.egg-rail.hatched .egg-shell{opacity:0;transform:translateX(-50%) scale(.15);}
-.phoenix{position:absolute;left:50%;top:12px;width:96px;height:96px;transform:translateX(-50%) scale(.15);opacity:0;filter:drop-shadow(0 0 18px rgba(255,106,0,.6));transition:opacity .5s var(--slow),transform .75s var(--slow);pointer-events:none;z-index:3;}
-.egg-rail.hatched .phoenix{opacity:1;transform:translateX(-50%) scale(1);}
-.phoenix-body{width:72px;height:84px;margin:0 auto;position:relative;}
-.phoenix-head{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 38% 38%,#ff6a00,#d63e00);margin:0 auto 4px;position:relative;}
-.phoenix-beak{position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:14px solid #ffcc66;}
-.phoenix-torso{width:42px;height:46px;border-radius:44% 44% 52% 52%;background:linear-gradient(180deg,#ff7a0a,#d64000);margin:0 auto;position:relative;}
-.phoenix-wing{position:absolute;width:28px;height:44px;border-radius:50%;background:linear-gradient(180deg,#ff9a4a,#d64000);transform:rotate(-20deg);top:24px;left:-18px;animation:wing .7s ease-in-out infinite alternate;}
-.phoenix-wing.r{left:auto;right:-18px;transform:rotate(20deg);animation-direction:alternate-reverse;}
-@keyframes wing{0%{transform:rotate(-28deg);}100%{transform:rotate(-18deg);}}
-.egg-progress-label{margin-top:12px;text-align:center;font:600 10px/1.4 Inter,monospace;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;max-width:90px;}
-.egg-stage::after{content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:46px;height:12px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(255,106,0,.18),transparent 70%);filter:blur(6px);}
 </style>
 </head>
 <body>
@@ -299,7 +251,7 @@ footer{padding:38px 0 60px;border-top:1px solid var(--line);background:#000;}
         <a href="#reviews">Отзывы</a>
         <a href="#contacts">Контакты</a>
       </div>
-      <a class="nav-cta" href="#lead">Записаться</a>
+      <a class="nav-cta" href="tel:+79222322758">Позвонить</a>
     </nav>
   </div>
 </header>
@@ -395,7 +347,7 @@ footer{padding:38px 0 60px;border-top:1px solid var(--line);background:#000;}
           <h3>Массаж и восстановление</h3><p>Ручная работа с мышцами и снятие усталости после тренировок.</p>
         </article>
       </div>
-      <p class="note">Актуальные цены — в разделе «Цены». Оставьте заявку, и мы подберём программу под вашу цель.</p>
+      <p class="note">Актуальные цены — в разделе «Цены». Позвоните или напишите — подберём программу под вашу цель.</p>
     </div>
   </section>
 
@@ -463,58 +415,28 @@ footer{padding:38px 0 60px;border-top:1px solid var(--line);background:#000;}
     </div>
   </section>
 
-  <section id="lead" class="reveal">
-    <div class="shell">
-      <div class="lead-grid">
-        <div class="lead-text">
-          <div class="section-head" style="margin-bottom:0">
-            <span class="eyebrow">Запись</span>
-            <h2 class="section-title">Оставьте заявку</h2>
-          </div>
-          <p>Оставьте контакты — администратор поможет с программой, расписанием и подберёт подходящий абонемент.</p>
-        </div>
-        <form class="form" id="leadForm" novalidate>
-          <div class="field"><label for="name">Имя</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться"></div>
-          <div class="field"><label for="phone">Телефон *</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="+7 ___ ___-__-__"></div>
-          <div class="field"><label for="service">Интересует</label>
-            <select id="service" name="service">
-              <option value="">Выберите направление</option>
-              <option value="Тренажёрный зал">Тренажёрный зал</option>
-              <option value="Персональные тренировки">Персональные тренировки</option>
-              <option value="Групповые занятия">Групповые занятия</option>
-              <option value="Детский фитнес">Детский фитнес</option>
-              <option value="Другое">Другое</option>
-            </select>
-          </div>
-          <div class="field"><label for="msg">Комментарий</label><textarea id="msg" name="msg" placeholder="Цели, опыт, удобное время"></textarea></div>
-          <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Отправить заявку</button>
-            <a class="btn btn-ghost" href="https://wa.me/79222322758" target="_blank" rel="noopener">Написать в WhatsApp</a>
-          </div>
-          <p class="status" id="formStatus" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
   <section id="contacts" class="reveal">
     <div class="shell">
-      <div class="section-head"><span class="eyebrow">Контакты</span><h2 class="section-title">Как нас найти</h2><p>Заходите в гости — администратор всё покажет и подберёт программу.</p></div>
-      <div class="branch-grid">
-        <article class="branch">
+      <div class="section-head">
+        <span class="eyebrow">Контакты</span>
+        <h2 class="section-title">Как нас найти</h2>
+        <p>Заходите в гости — администратор всё покажет и подберёт программу.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
           <h3>ул. Ленина, 12</h3>
-          <p>Снежинск</p>
-          <p>Пн–Пт 08:00–22:00, Сб–Вс 10:00–16:00</p>
-          <a class="tel" href="tel:+79222322758">+7 (922) 232-27-58</a>
-          <a href="https://vk.com/public170354319" target="_blank" rel="noopener">ВКонтакте</a>
-          <a href="https://wa.me/79222322758" target="_blank" rel="noopener">WhatsApp</a>
-        </article>
-        <article class="branch">
-          <h3>Как записаться</h3>
-          <p>Оставьте заявку на сайте или напишите в WhatsApp — поможем с расписанием и абонементом.</p>
-          <a class="tel" href="tel:+79222322758">+7 (922) 232-27-58</a>
-          <a href="#lead">Оставить заявку</a>
-        </article>
+          <p class="meta">Снежинск, Челябинская область<br>Пн–Пт 08:00–22:00, Сб–Вс 10:00–16:00</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="tel:+79222322758">+7 (922) 232-27-58</a>
+            <a class="btn btn-ghost" href="https://vk.com/public170354319" target="_blank" rel="noopener">ВКонтакте</a>
+            <a class="btn btn-ghost" href="https://wa.me/79222322758" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+        <a class="map-card" href="https://2gis.ru/snezhinsk/firm/70000001105917869" target="_blank" rel="noopener" aria-label="Фитнес-клуб Fenix на карте 2ГИС: улица Ленина, 12, Снежинск">
+          <span class="map-preview" aria-hidden="true" style="background-image:url('https://beautyshare.2gis.ru/api/v1/image?city=snezhinsk&amp;zoom=17&amp;center=60.739541,56.085175&amp;title=Fenix%20Fitness%20Club&amp;desc=%D1%83%D0%BB.%20%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0%2C%2012')"></span>
+          <span class="map-pin" aria-hidden="true"></span>
+          <span class="map-label">Открыть в 2ГИС</span>
+        </a>
       </div>
     </div>
   </section>
@@ -530,68 +452,12 @@ footer{padding:38px 0 60px;border-top:1px solid var(--line);background:#000;}
   </div>
 </footer>
 
-<!-- Феникс: яйцо раскалывается по мере прокрутки -->
-<div class="egg-rail" id="eggRail" data-crack="0" aria-hidden="true">
-  <div class="egg-stage">
-    <div class="egg-shell"><span class="egg-crack"></span></div>
-    <div class="phoenix">
-      <div class="phoenix-body">
-        <div class="phoenix-head"><div class="phoenix-beak"></div></div>
-        <div class="phoenix-torso">
-          <div class="phoenix-wing"></div>
-          <div class="phoenix-wing r"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="egg-progress-label" id="eggLabel">Скролль — вылупится феникс</div>
-</div>
-
 <script>
 (function () {
   'use strict';
 
-  // ---------- форма заявки ----------
-  var form = document.getElementById('leadForm');
-  var status = document.getElementById('formStatus');
-  var FALLBACK_TEL = '+79222322758';
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    if (!form.phone.value.trim()) {
-      status.textContent = 'Укажите телефон или способ связи.';
-      status.classList.remove('ok');
-      form.phone.focus();
-      return;
-    }
-    var data = {
-      source: 'fenix-fitness',
-      name: form.name.value.trim(),
-      phone: form.phone.value.trim(),
-      service: form.service.value.trim(),
-      msg: form.msg.value.trim(),
-      url: location.href
-    };
-    status.textContent = 'Отправляем…';
-    status.classList.remove('ok');
-    try {
-      var res = await fetch('/api/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      if (!res.ok) throw new Error('bad');
-      status.textContent = 'Заявка отправлена. Спасибо, мы свяжемся с вами!';
-      status.classList.add('ok');
-      form.reset();
-    } catch (err) {
-      status.textContent = 'Не удалось отправить онлайн. Позвоните или напишите в WhatsApp — ссылка ниже.';
-      window.location.href = 'tel:' + FALLBACK_TEL;
-    }
-  });
-
   // ---------- появление секций при скролле ----------
-  var targets = document.querySelectorAll('main > section, .card, .review, .trainer, .price-row, .branch');
+  var targets = document.querySelectorAll('main > section, .card, .review, .trainer, .price-row, .contact-card, .map-card');
   targets.forEach(function (el, i) {
     el.classList.add('reveal');
     el.style.transitionDelay = ((i % 8) * 70) + 'ms';
@@ -622,34 +488,6 @@ footer{padding:38px 0 60px;border-top:1px solid var(--line);background:#000;}
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach(function (s) { navIo.observe(s); });
-  }
-
-  // ---------- феникс: яйцо -> трещины -> вылупление ----------
-  var rail = document.getElementById('eggRail');
-  var eggLabel = document.getElementById('eggLabel');
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (rail && !reduce) {
-    var ticking = false;
-    var update = function () {
-      ticking = false;
-      var doc = document.documentElement;
-      var max = doc.scrollHeight - window.innerHeight;
-      var p = max > 0 ? Math.min(1, Math.max(0, doc.scrollTop / max)) : 0;
-      var crack = p > .18 ? 1 : 0;
-      if (p > .42) crack = 2;
-      if (p > .66) crack = 3;
-      rail.setAttribute('data-crack', String(crack));
-      rail.classList.toggle('hatched', p > .9);
-      rail.style.setProperty('--egg-scale', String(1 - p * 0.12));
-      if (eggLabel) {
-        eggLabel.textContent = p > .9 ? 'Феникс возрождён' : 'Скролль — вылупится феникс';
-      }
-    };
-    window.addEventListener('scroll', function () {
-      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
-    }, { passive: true });
-    window.addEventListener('resize', update, { passive: true });
-    update();
   }
 
   // ---------- год в футере ----------
